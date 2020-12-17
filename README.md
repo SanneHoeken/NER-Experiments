@@ -52,6 +52,7 @@ First of all, change the working directory of the execution environment to the *
 
 1. **Preprocessing data.**
   This program can be run by calling:
+
   ``
   python preprocessing.py [path to data info] [path to file with conversions]
   ``
@@ -64,6 +65,7 @@ First of all, change the working directory of the execution environment to the *
 
 2. **Feature engineering.**
   This program can be run by calling:
+
   ``
   python feature_engineering.py [path to preprocessed data info]
   ``
@@ -88,6 +90,7 @@ First of all, change the working directory of the execution environment to the *
 
 4. **Evaluating the systems.**
   This program can be run by calling:
+
   ``
   python evaluation.py [path to preprocessed data info]
   ``
@@ -101,13 +104,9 @@ First of all, change the working directory of the execution environment to the *
 If your environment meets the default settings, an experiment with an SVM classifier would be possible with running the following command lines one after the other:
 ``
 python preprocessing.py '../settings/data_info.json' '../settings/conversions.json'
-
 python feature_engineering.py '../settings/data_info-preprocessed.json'
-
 python system_experiment.py '../settings/data_info-preprocessed.json' 'svm' '../data/svm_out.conll'
-
 python evaluation.py '../settings/data_info-preprocessed.json'
-
 ``
 ## Author
 - Sanne Hoeken (student number: 2710599)
