@@ -54,9 +54,9 @@ First of all, change the working directory of the execution environment to the *
 
   This program can be run by calling:
 
-  ``
+  ```
   python preprocessing.py [path to data info] [path to file with conversions]
-  ``
+  ```
 
   The path to data info should point to the json-file that provides the information of the data, as explained above. Probably: '../settings/data_info.json'
 
@@ -68,9 +68,9 @@ First of all, change the working directory of the execution environment to the *
 
   This program can be run by calling:
 
-  ``
+  ```
   python feature_engineering.py [path to preprocessed data info]
-  ``
+  ```
 
   The path to preprocessed data info should point to the json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info-preprocessed.json'.
 
@@ -80,9 +80,9 @@ First of all, change the working directory of the execution environment to the *
 
   This program can be run by calling:
 
-  ``
+  ```
   python system_experiment.py [path to preprocessed data info] [name of machine learning algorithm] [path to conll outputfile]
-  ``
+  ```
 
   The path to preprocessed data info should point to the json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info-preprocessed.json'.
   
@@ -96,9 +96,9 @@ First of all, change the working directory of the execution environment to the *
 
   This program can be run by calling:
 
-  ``
+  ```
   python evaluation.py [path to preprocessed data info]
-  ``
+  ```
 
   The path to preprocessed data info should point to a json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info.json-preprocessed'.
   
@@ -108,20 +108,21 @@ First of all, change the working directory of the execution environment to the *
 
 If your environment meets the default settings, an experiment with an SVM classifier would be possible with running the following command lines one after the other:
 
-``
+```
 python preprocessing.py '../settings/data_info.json' '../settings/conversions.json'
-``
+```
 
-``
+```
 python feature_engineering.py '../settings/data_info-preprocessed.json'
-``
+```
 
-``
+```
 python system_experiment.py '../settings/data_info-preprocessed.json' 'svm' '../data/svm_out.conll'
-``
+```
 
-``
+```
 python evaluation.py '../settings/data_info-preprocessed.json'
-``
+```
+
 ## Author
 - Sanne Hoeken (student number: 2710599)
