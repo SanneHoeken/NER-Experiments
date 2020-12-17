@@ -56,7 +56,6 @@ First of all, change the working directory of the execution environment to the *
   ``
   python preprocessing.py [path to data info] [path to file with conversions]
   ``
-
     The path to data info should point to the json-file that provides the information of the data, as explained above. Probably: '../settings/data_info.json'
 
     The path to file with conversions should point to a json-file that specifies all the label conversions that should be made for each data-file. See **/settings/conversions.json** for an example (which I highly recommend to use).
@@ -69,7 +68,6 @@ First of all, change the working directory of the execution environment to the *
   ``
   python feature_engineering.py [path to preprocessed data info]
   ``
-  
     The path to preprocessed data info should point to the json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info-preprocessed.json'.
 
     After the execution of the program, every token in the gold and training file will be enriched with a selection of features. 
@@ -79,7 +77,6 @@ First of all, change the working directory of the execution environment to the *
   ``
   python system_experiment.py [path to preprocessed data info] [name of machine learning algorithm] [path to conll outputfile]
   ``
-  
     The path to preprocessed data info should point to the json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info-preprocessed.json'.
     
     The name of the machine learning algorithm can be one of the following: 'logreg', 'naivebayes', 'svm' or 'crf'. 
@@ -94,7 +91,6 @@ First of all, change the working directory of the execution environment to the *
   ``
   python evaluation.py [path to preprocessed data info]
   ``
-  
     The path to preprocessed data info should point to a json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info.json-preprocessed'.
     
     The program evaluates all the systems, of which the outputfile is given in the json-file with data information, and prints the results.
@@ -102,10 +98,20 @@ First of all, change the working directory of the execution environment to the *
 **Example**
 
 If your environment meets the default settings, an experiment with an SVM classifier would be possible with running the following command lines one after the other:
+
 ``
 python preprocessing.py '../settings/data_info.json' '../settings/conversions.json'
+``
+
+``
 python feature_engineering.py '../settings/data_info-preprocessed.json'
+``
+
+``
 python system_experiment.py '../settings/data_info-preprocessed.json' 'svm' '../data/svm_out.conll'
+``
+
+``
 python evaluation.py '../settings/data_info-preprocessed.json'
 ``
 ## Author
