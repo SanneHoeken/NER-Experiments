@@ -51,49 +51,58 @@ If your enviroment does not match the default settings, adjust the file to your 
 First of all, change the working directory of the execution environment to the **/code** directory.
 
 1. **Preprocessing data.**
+
   This program can be run by calling:
 
   ``
   python preprocessing.py [path to data info] [path to file with conversions]
   ``
-    The path to data info should point to the json-file that provides the information of the data, as explained above. Probably: '../settings/data_info.json'
 
-    The path to file with conversions should point to a json-file that specifies all the label conversions that should be made for each data-file. See **/settings/conversions.json** for an example (which I highly recommend to use).
-    
-    After the execution of the program, preprocessed versions of the datafiles will be stored in the same folder as where they were found and an updated version of the data information will be stored in a json-file in **/settings** as **data_info-preprocessed.json**.
+  The path to data info should point to the json-file that provides the information of the data, as explained above. Probably: '../settings/data_info.json'
+
+  The path to file with conversions should point to a json-file that specifies all the label conversions that should be made for each data-file. See **/settings/conversions.json** for an example (which I highly recommend to use).
+  
+  After the execution of the program, preprocessed versions of the datafiles will be stored in the same folder as where they were found and an updated version of the data information will be stored in a json-file in **/settings** as **data_info-preprocessed.json**.
 
 2. **Feature engineering.**
+
   This program can be run by calling:
 
   ``
   python feature_engineering.py [path to preprocessed data info]
   ``
-    The path to preprocessed data info should point to the json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info-preprocessed.json'.
 
-    After the execution of the program, every token in the gold and training file will be enriched with a selection of features. 
+  The path to preprocessed data info should point to the json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info-preprocessed.json'.
+
+  After the execution of the program, every token in the gold and training file will be enriched with a selection of features. 
 
 3. **Training and testing of a NER system.**
+
   This program can be run by calling:
+
   ``
   python system_experiment.py [path to preprocessed data info] [name of machine learning algorithm] [path to conll outputfile]
   ``
-    The path to preprocessed data info should point to the json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info-preprocessed.json'.
-    
-    The name of the machine learning algorithm can be one of the following: 'logreg', 'naivebayes', 'svm' or 'crf'. 
-    
-    The path to the conll outputfile should point to an existing directory and the name of the file should end with the '.conll' extension.
-    
-    After the execution of the program, the output of the trained and tested NER system will be stored in the specified outputfile. In addition, the provided json-file with data information is updated with the information of the generated output file.
+
+  The path to preprocessed data info should point to the json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info-preprocessed.json'.
+  
+  The name of the machine learning algorithm can be one of the following: 'logreg', 'naivebayes', 'svm' or 'crf'. 
+  
+  The path to the conll outputfile should point to an existing directory and the name of the file should end with the '.conll' extension.
+  
+  After the execution of the program, the output of the trained and tested NER system will be stored in the specified outputfile. In addition, the provided json-file with data information is updated with the information of the generated output file.
 
 4. **Evaluating the systems.**
+
   This program can be run by calling:
 
   ``
   python evaluation.py [path to preprocessed data info]
   ``
-    The path to preprocessed data info should point to a json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info.json-preprocessed'.
-    
-    The program evaluates all the systems, of which the outputfile is given in the json-file with data information, and prints the results.
+
+  The path to preprocessed data info should point to a json-file that provides for every preprocessed datafile the information as described above, probably: '../settings/data_info.json-preprocessed'.
+  
+  The program evaluates all the systems, of which the outputfile is given in the json-file with data information, and prints the results.
 
 **Example**
 
